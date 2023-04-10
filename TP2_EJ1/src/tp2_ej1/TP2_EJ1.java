@@ -15,6 +15,16 @@ public class TP2_EJ1 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Complejo c1, c2;
+        
+        c1 = new Complejo(1,1);
+        c2 = new Complejo(2,2);
+        
+        c1.inc(c2);
+        System.out.println(c1);
+        
+        
+        
     }
     
 }
