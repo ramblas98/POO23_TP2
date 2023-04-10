@@ -71,6 +71,9 @@ public class Complejo {
     public double modulo(){
         return Math.sqrt(this.re+this.im);
     }
+    public Complejo conjugado(){
+        return new Complejo(this.re,(-1)*this.im);
+    }
     public static Complejo suma(Complejo a,Complejo b){
         Complejo c;
         c=new Complejo(a.re+b.re,b.im+a.im);
