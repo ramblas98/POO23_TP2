@@ -71,4 +71,19 @@ public class Complejo {
     public double modulo(){
         return Math.sqrt(this.re+this.im);
     }
+    public static Complejo suma(Complejo a,Complejo b){
+        Complejo c;
+        c=new Complejo(a.re+b.re,b.im+a.im);
+        return c;
+    }
+    public static Complejo resta(Complejo a,Complejo b){
+        return new Complejo(a.re-b.re,a.im-b.im);
+    }
+    public static Complejo producto(Complejo a,Complejo b){
+        return new Complejo(a.re*b.re,a.im*b.im);
+    }
+    public static Complejo division(Complejo a,Complejo b){
+        return new Complejo(a.re/b.re,a.im/b.im);
+    }
+    
 }
