@@ -41,6 +41,8 @@ public class Complejo {
         return "Complejo{" + "re=" + re + ", im=" + im + '}';
     }
     
+    // Metodos de instancias (NO estaticos)
+    
     public void inc(Complejo a){
         this.re = this.re + a.re;
         this.im = this.im + a.im;
@@ -69,5 +71,46 @@ public class Complejo {
     public double modulo(){
     double d = Math.sqrt(Math.pow(this.re,2)+Math.pow(this.im,2));
     return d;
+    }
+    
+    public Complejo conjugado(){
+        Complejo b = new Complejo(0,0);
+        b.re = this.re;
+        b.im = this.im*-1;
+        return b;
+    }
+    
+    // Metodos de clases
+    
+    public static Complejo suma(Complejo a, Complejo b){
+        Complejo c;
+        c = new Complejo();
+        c.re = a.re + b.re;
+        c.im = a.im + b.im;
+        return c;
+    }
+
+    public static Complejo resta(Complejo a, Complejo b){
+        Complejo c;
+        c = new Complejo();
+        c.re = a.re - b.re;
+        c.im = a.im - b.im;
+        return c;
+    }
+    
+    public static Complejo producto(Complejo a, Complejo b){
+        Complejo c;
+        c = new Complejo();
+        c.re = a.re * b.re;
+        c.im = a.im * b.im;
+        return c;
+    }
+    
+    public static Complejo division(Complejo a, Complejo b){
+        Complejo c;
+        c = new Complejo();
+        c.re = a.re / b.re;
+        c.im = a.im / b.im;
+        return c;
     }
 }
