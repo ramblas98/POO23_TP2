@@ -19,7 +19,6 @@ public class TP02_EJE1 {
         c1=new Complejo(1,1);
         c2=new Complejo(2,2);
         c1.por(c2);
-        System.out.println(c1);
     }
     
 }
