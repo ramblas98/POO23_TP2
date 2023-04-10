@@ -54,5 +54,21 @@ public class Complejo {
         this.re=(this.re * a.re)-(this.im * a.im);
         this.im=(this.re * a.im)+(this.im * a.re);
     }
-    
+    public void por(double d){
+        this.im=this.im * d;
+        this.re=this.re * d;
+    }
+    public void div(Complejo a){
+        double d,e,f;
+        //parte real
+        d=((this.re*a.im)+(this.im*a.re));
+        e=(a.re*a.re)+(a.im*a.im);
+        //parte imaginaria
+        f=(this.im*a.re)-(this.re*a.im);
+        this.re=d/e;
+        this.im=f/e;
+    }
+    public double modulo(){
+        return Math.sqrt(this.re+this.im);
+    }
 }
