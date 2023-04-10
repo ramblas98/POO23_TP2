@@ -35,6 +35,14 @@ public class Complejo {
     public void setIm(double im) {
         this.im = im;
     }
+
+    @Override
+    public String toString() {
+        return "Complejo{" + "re=" + re + ", im=" + im + '}';
+    }
     
-    
+    public void inc(Complejo a){
+        this.re += a.re;
+        this.im += a.im;
+    }
 }
