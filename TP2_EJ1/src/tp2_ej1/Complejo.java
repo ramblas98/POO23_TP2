@@ -45,4 +45,42 @@ public class Complejo {
         this.re += a.re;
         this.im += a.im;
     }
+    public void dec(Complejo a){
+        this.re -= a.re;
+        this.im -= a.im;
+    }
+    public void por(Complejo a){
+        this.re *= a.re;
+        this.im *= a.im;
+    }
+    public void por(double d){
+        this.re *= d;
+        this.im *= d;
+    }
+    public void div(Complejo a){
+        this.re /= a.re;
+        this.im /= a.im;
+    }
+    public double modulo(){
+        double m = Math.sqrt(Math.pow(this.re, 2) + Math.pow(this.im, 2));
+        return m;
+    }
+    public Complejo conjugado(){
+       
+        Complejo c= new Complejo();
+        
+        c.re= this.re;
+        c.im = this.im*(-1);
+        
+        return c;
+    }
+    public static Complejo suma(Complejo a,Complejo b){
+      
+        Complejo C = new Complejo();
+        
+        C.re = a.re + b.re;
+        C.im = a.im + b.im;
+       
+        return C;
+    }
 }
