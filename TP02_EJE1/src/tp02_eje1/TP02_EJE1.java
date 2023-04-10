@@ -16,9 +16,15 @@ public class TP02_EJE1 {
      */
     public static void main(String[] args) {
         Complejo c1,c2;
-        c1=new Complejo(1,1);
-        c2=new Complejo(2,2);
-        c1.por(c2);
+        Scanner teclado=new Scanner(System.in);
+        int op=90;
+        while(op!=0){
+            System.out.println("1:Suma");
+            System.out.println("2:Resta");
+            System.out.println("3:Producto");
+            System.out.println("4:Cociente");
+            op=teclado.nextInt();
+        }
     }
     
 }
