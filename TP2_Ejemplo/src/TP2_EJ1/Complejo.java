@@ -6,7 +6,7 @@ package TP2_EJ1;
 
 /**
  *
- * @author Cossio Carina
+ * @author Jonatan Cossio
  */
 public class Complejo {
     private double re;
@@ -35,6 +35,41 @@ public class Complejo {
     public void setIm(double im) {
         this.im = im;
     }
+
+    @Override
+    public String toString() {
+        return "Complejo{" + "re=" + re + ", im=" + im + '}';
+    }
     
+    public void inc(Complejo a){
+        this.re += a.re;
+        this.im += a.im;
+    }
     
+    public void dec(Complejo a){
+        this.re -= a.re;
+        this.im -= a.im;
+    }
+    
+    public void por(double d){
+        this.re *= d - im*0;
+        this.im =
+    }
+    
+    public void div (Complejo a){
+        
+    }
+    
+    public double modulo(){
+        Complejo c3;
+        c3 = new Complejo (3,2);
+        double result = 
+    }
+    
+    public Complejo conjugado(){
+        Complejo c3;
+        c3 = new Complejo (3,2 );
+        c3.im *=(-1);
+        return c3;
+    }
 }
