@@ -35,6 +35,39 @@ public class Complejo {
     public void setIm(double im) {
         this.im = im;
     }
+
+    @Override
+    public String toString() {
+        return "Complejo{" + "re=" + re + ", im=" + im + '}';
+    }
     
+    public void inc(Complejo a){
+        this.re = this.re + a.re;
+        this.im = this.im + a.im;
+    }
     
+    public void dec(Complejo a){
+        this.re = this.re - a.re;
+        this.im = this.im - a.im;
+    }
+    
+    public void por(Complejo a){
+        this.re = this.re * a.re;
+        this.im = this.im * a.im;
+    }
+    
+    public void por(double d){
+        this.re = this.re * d;
+        this.im = this.im * d;
+    }
+    
+    public void div(Complejo a){
+        this.re = this.re / a.re;
+        this.im = this.im / a.im;
+    }
+    
+    public double modulo(){
+    double d = Math.sqrt(Math.pow(this.re,2)+Math.pow(this.im,2));
+    return d;
+    }
 }
