@@ -64,14 +64,14 @@ public class Fecha {
         this.dia = this.dia + d;
     }
     
-/*    public boolean valida(){
-       if(32>this.dia>0 && 13>this.mes>0 && 2023>this.anio>999){
+    public boolean valida(){
+       if(32>this.dia){
          return true;  
        }else{
            return false;
        }
     }
-*/
+
     
     public void normalizar(){
         
@@ -86,7 +86,7 @@ public class Fecha {
     }
     
     public boolean bisiesto(int a){
-        return true;
+        return a%400 == 0 || a%4==0 && a%100!=0;
     }
     
     public int dia(int m){
