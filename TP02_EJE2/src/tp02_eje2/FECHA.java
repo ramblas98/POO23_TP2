@@ -101,8 +101,36 @@ public class FECHA {
         }
         else return false;
     }
-    public boolean normalizar(){
-        return true;
+    public int dias(int d){
+        if(bisiesto()==false){
+           if( this.mes==1 || this.mes==3 || this.mes==7 || this.mes==8 ||this.mes==10 || this.mes==12){
+               return 31;
+                }
+        else if(this.mes==4 || this.mes==6 || this.mes==9 || this.mes==11) return 30;     
+        else return 28;
+        }
+        else {
+            if( this.mes==1 || this.mes==3 || this.mes==7 || this.mes==8 ||this.mes==10 || this.mes==12){
+               return 31;
+                }
+            else if(this.mes==4 || this.mes==6 || this.mes==9 || this.mes==11) return 30;     
+            else return 29;
+        }
+    }
+    public void normalizar(){
+        int re=0;
+        while(valida()==false){
+           re=dias(this.mes);
+           if(this.dia>re&&this.mes==12){
+                this.dia=this.dia-re;
+                this.anio=this.anio+1;
+                this.mes=1;
+                }
+           else if(this.dia>re&&this.mes<12){
+                this.dia=this.dia-re;
+                this.mes=this.mes+1;
+           }
+        }
     }
     public boolean bisiesto(){
         if(this.anio%4==0&&this.anio%100!=0) return true;
