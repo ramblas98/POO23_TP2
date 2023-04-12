@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package tp2_ej2;
-import java.util.*;
 
 /**
  *
@@ -65,9 +64,14 @@ public class Fecha {
         this.dia = this.dia + d;
     }
     
-    public boolean valida(){
-        return true;
+/*    public boolean valida(){
+       if(32>this.dia>0 && 13>this.mes>0 && 2023>this.anio>999){
+         return true;  
+       }else{
+           return false;
+       }
     }
+*/
     
     public void normalizar(){
         
@@ -77,11 +81,22 @@ public class Fecha {
         return 15;
     }
     
-    public void imprimir(){
-        
+    public String imprimir(){
+        return "Fecha{" + "dia=" + dia + ", mes=" + mes + ", anio=" + anio + '}';
     }
     
     public boolean bisiesto(int a){
         return true;
+    }
+    
+    public int dia(int m){
+        switch(m){
+            case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+                return 31;
+            case 2:
+                return 28;
+            case 4: case 6: case 9: case 11: default:
+                return 30;
+        }
     }
 }
