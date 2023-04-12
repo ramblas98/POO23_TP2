@@ -57,19 +57,31 @@ public class Complejo {
     }
     
     public void div (Complejo a){
-        
+        this.re %= a.re;
+        this.im %= a.im;
     }
     
     public double modulo(){
-        Complejo c3;
-        c3 = new Complejo (3,2);
-        double result = 
+         double result;
+         result = this.re*2 + this.im*2;
+         return result;
     }
     
     public Complejo conjugado(){
-        Complejo c3;
-        c3 = new Complejo (3,2 );
-        c3.im *=(-1);
-        return c3;
+        
+        this.im *=(-1);
+        return im;
     }
+    
+    public static suma( Complejo a , Complejo b){
+        Complejo result;
+        
+        result.re = a.re + b.re;
+        result.im = a.im * b.im;
+        
+        System.out.println("Suma:"+result);
+    }
+        
+    
+
 }
