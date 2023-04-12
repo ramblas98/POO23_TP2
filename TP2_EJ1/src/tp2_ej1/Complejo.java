@@ -76,11 +76,38 @@ public class Complejo {
     }
     public static Complejo suma(Complejo a,Complejo b){
       
-        Complejo C = new Complejo();
+        Complejo C = new Complejo();// siempre hay que instaciarlo
         
         C.re = a.re + b.re;
         C.im = a.im + b.im;
        
+        return C;
+    }
+    public static Complejo resta(Complejo a,Complejo b){
+        Complejo C;
+        C = new Complejo();
+        
+        C.re = a.re - b.re;
+        C.im = a.im - b.im;
+        
+        return C;
+    }
+    public static Complejo producto(Complejo a,Complejo b){
+        Complejo C;
+        C = new Complejo();
+        
+        C.re = a.re * b.re;
+        C.im = a.im * b.im;
+        
+        return C;
+    }
+    public static Complejo division(Complejo a,Complejo b){
+        Complejo C;
+        C = new Complejo();
+        
+        C.re = a.re / b.re;
+        C.im = a.im / b.im;
+        
         return C;
     }
 }
