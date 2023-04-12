@@ -61,6 +61,7 @@ public class TP02_EJE1 {
             System.out.println("9:Resta");
             System.out.println("10:Producto");
             System.out.println("11:Cociente");
+            System.out.println("0:Salir");
             op=teclado.nextInt();
             switch(op){
                 case 1:insertar(c1,c2);
@@ -94,8 +95,21 @@ public class TP02_EJE1 {
                        System.out.println(c1); 
                        break;
                 case 8:insertar(c1,c2);
+                       c3=Complejo.suma(c1, c2);
                        System.out.println(c3);
                        break;
+                case 9:insertar(c1,c2);
+                       c3=Complejo.resta(c1, c2);
+                       System.out.println(c3);
+                       break;
+                case 10:insertar(c1,c2);
+                        c3=Complejo.producto(c1, c2);
+                        System.out.println(c3);
+                        break;
+                case 11:insertar(c1,c2);
+                        c3=Complejo.division(c1, c2);
+                        System.out.println(c3);
+                        break;
             }
         }
     }
