@@ -77,11 +77,18 @@ public class Complejo {
         Complejo result;
         
         result.re = a.re + b.re;
-        result.im = a.im * b.im;
+        result.im = a.im + b.im;
         
         System.out.println("Suma:"+result);
     }
         
-    
+    public static resta ( Complejo a, Complejo b){
+        Complejo result; 
+        
+        result.re = a.re - b.re;
+        result.im  = a.re - b.re;
+        
+        System.out.println("Resta: "+result);
+    }
 
 }
