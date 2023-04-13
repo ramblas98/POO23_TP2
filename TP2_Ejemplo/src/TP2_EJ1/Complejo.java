@@ -51,44 +51,25 @@ public class Complejo {
         this.im -= a.im;
     }
     
-    public void por(double d){
-        this.re *= d - im*0;
-        this.im =
+      public void por(Complejo a){
+        this.re = this.re*a.re - this.im*a.im;
+        this.im = this.re*a.re * this.im*a.im;
     }
     
     public void div (Complejo a){
-        this.re %= a.re;
-        this.im %= a.im;
+        double denominador = a.re*a.re + a.im*a.im; 
+        this.re = (this.re*a.re + this.im*a.im)/denominador;
+        this.im = (this.im * a.re - this.re * a.im)/denominador;
     }
     
     public double modulo(){
-         double result;
-         result = this.re*2 + this.im*2;
-         return result;
+        return Math.sqrt(this.re*2 + this.im*2);
     }
+    
+    
     
     public Complejo conjugado(){
-        
-        this.im *=(-1);
-        return im;
-    }
-    
-    public static suma( Complejo a , Complejo b){
-        Complejo result;
-        
-        result.re = a.re + b.re;
-        result.im = a.im + b.im;
-        
-        System.out.println("Suma:"+result);
-    }
-        
-    public static resta ( Complejo a, Complejo b){
-        Complejo result; 
-        
-        result.re = a.re - b.re;
-        result.im  = a.re - b.re;
-        
-        System.out.println("Resta: "+result);
+          return new Complejo(this.re, -this.im);
     }
 
 }
