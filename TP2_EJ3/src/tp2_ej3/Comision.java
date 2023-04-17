@@ -49,6 +49,15 @@ public class Comision {
        this.totalEstudiante++;
    }
    
+   public void agregarEstudiante(String apellidos, String nombres, int lu, String email){
+       Estudiante e = new Estudiante();
+       e.setApellido(apellidos);
+       e.setNombre(nombres);
+       e.setLU(lu);
+       e.setEmail(email);
+       
+   }
+   
    public void mostrarLista(){
        System.out.println("Lista de estudiantes:");
        for(int i=0 ; i<this.totalEstudiante; i++){
