@@ -14,11 +14,11 @@ import java.util.*;
  */
 public class Comision {
     private int totalClases;
-    private Estudiante listaEstudiante[] = new Estudiante[100];
+    private Estudiante listaEstudiante[];
     private int totalEstudiante;
 
     public Comision(){
-        
+        this.listaEstudiante = new Estudiante[100];
     }
 
     public Comision(int totalClases) {
@@ -62,6 +62,7 @@ public class Comision {
         nombres = teclado.nextLine();
         System.out.println("Ingresa el numero de libreta universitaria: ");
         lu = teclado.nextInt();
+        teclado.nextLine();
         System.out.println("Ingresa el email del estudiante: ");
         email = teclado.nextLine();
         e.setApellidos(apellidos);
@@ -83,19 +84,19 @@ public class Comision {
     }
     
     public void mostrarLista(){
+        this.ordenarLista();
         for(int i=0;i<this.totalEstudiante+1;i++){
             System.out.println(listaEstudiante[i]);
         }
     }
     
     private void ordenarLista(){
-        Arrays.sort(listaEstudiante);
+        Arrays.sort(this.listaEstudiante);
     }
     
     public Estudiante buscarEstudiante(int lu){
         for(int i=0;i<this.totalEstudiante+1;i++){
             if(listaEstudiante[i].getLu() == lu){
-      
                 return listaEstudiante[i];
             }
         }
@@ -103,8 +104,9 @@ public class Comision {
     }
     
     public void mostrarRegulares(){
+        regularizarEstudiantes();
         for(int i=0; i<this.totalEstudiante+1;i++){
-            if(listaEstudiante[i].getNotaR() > 6){
+            if(listaEstudiante[i].regular == true){
                 System.out.println(listaEstudiante[i]);
             }
         }
@@ -115,6 +117,11 @@ public class Comision {
         for(int i=0;i<this.totalEstudiante+1;i++){
             reg = (listaEstudiante[i].getNotaP1() + listaEstudiante[i].getNotaP2())/2;
             listaEstudiante[i].setNotaR(reg);
+            if(listaEstudiante[i].getNotaR() >= 6){
+                listaEstudiante[i].setRegular(true);
+            }else{
+                listaEstudiante[i].setRegular(false);
+            }
         }
     }
 }
