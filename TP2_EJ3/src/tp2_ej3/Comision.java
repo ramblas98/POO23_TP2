@@ -43,6 +43,18 @@ public class Comision {
         this.totalEstudiante = totalEstudiante;
     }
     
+    public void Comision(){
+        this.totalClases = 0;
+        this.totalEstudiante = 0;
+        this.listaEstudiantes = new Estudiante[50];
+    }
+    
+    public void Comision(int totalClases){
+        this.totalClases += totalClases;
+        this.totalEstudiante = 0;
+        this.listaEstudiantes = new Estudiante[50];
+    }
+    
    public void agregarEstudiante(){
        Estudiante e = new Estudiante();
        this.listaEstudiantes[this.totalEstudiante] = e;
@@ -56,9 +68,14 @@ public class Comision {
        e.setLU(lu);
        e.setEmail(email);
        
+       this.listaEstudiantes[this.totalEstudiante] = e;
+       this.totalEstudiante++;      
    }
    
    public void mostrarLista(){
+       
+       this.ordenarLista();
+       
        System.out.println("Lista de estudiantes:");
        for(int i=0 ; i<this.totalEstudiante; i++){
            Estudiante e = this.listaEstudiantes[i];
@@ -76,7 +93,7 @@ public class Comision {
            
        }
     }
-   private void ordenarLista(){
+      private void ordenarLista(){
        System.out.println("Lista Ordenada");
        for(int i=0 ; i<this.totalEstudiante-1 ; i++){
            
@@ -91,6 +108,7 @@ public class Comision {
             }
        }
    }
+
    
    public Estudiante buscarEstudiante(int lu){
        int i=0;
@@ -99,6 +117,7 @@ public class Comision {
            if (this.listaEstudiantes[i].getLU() == lu){
                encontrado = true;   
            }
+           i++;
        }
        if (encontrado){
           return this.listaEstudiantes[i];
@@ -123,6 +142,21 @@ public class Comision {
                System.out.println("--------------------------");           
 
            }
+       }
+   }
+   public void regularizarEstudiante(){
+       
+       for (int i = 0 ; i<this.totalEstudiante ; i++){
+           if (this.listaEstudiantes[i].getNotaP1()>=6 && this.listaEstudiantes[i].getNotaP2()>=6){
+               this.listaEstudiantes[i].regular = true;
+           }
+           else if (this.listaEstudiantes[i].getNotaP1()>= 6 && this.listaEstudiantes[i].getNotaP2()<6 && this.listaEstudiantes[i].getNotaR()>=6){
+               this.listaEstudiantes[i].regular = true;
+           }
+           else if (this.listaEstudiantes[i].getNotaP1() < 6 && this.listaEstudiantes[i].getNotaP2() >=6 && this.listaEstudiantes[i].getNotaR()>=6){
+               this.listaEstudiantes[i].regular = true;
+           }
+           else this.listaEstudiantes[i].regular = false;
        }
    }
    
