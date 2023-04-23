@@ -53,7 +53,7 @@ public class TP02_EJE6 {
         for(i=0;i<6;i++){
             h[i].mostrar();
         }
-        System.out.println("Se muestran vuelve a mostrar los medicos");
+        System.out.println("Se muestran vuelven a mostrar los medicos");
         a.mostrar();
     }
     
