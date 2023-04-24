@@ -81,7 +81,7 @@ public class Medico {
 
     
     public boolean disponibilidad(){
-        if(this.cupo < 10) return true;
+        if(this.cupo > 0) return true;
         else return false;
     }
     
