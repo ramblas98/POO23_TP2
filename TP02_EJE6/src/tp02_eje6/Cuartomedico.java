@@ -62,4 +62,20 @@ public class Cuartomedico {
             this.listamedico[i].mostrar();
         }
     }
+    public void eliminar(Medico e){
+        int i,j;
+        Historia a[]=new Historia[e.getCantidadh()];
+        a=e.getHistorial();
+        for(i=0;i<e.getCantidadh();i++){
+            a[i].setMedicoasignado(null);
+        }
+        for(i=0;i<this.cantidadmedicos;i++){
+            if(this.listamedico[i].getNombre()==e.getNombre()){
+                for(j=i;j<this.cantidadmedicos;j++){
+                    this.listamedico[j]=this.listamedico[j+1];
+                }
+            }
+        }
+        this.cantidadmedicos=this.cantidadmedicos-1;
+    }
 }

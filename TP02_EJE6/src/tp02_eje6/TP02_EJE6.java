@@ -55,6 +55,7 @@ public class TP02_EJE6 {
         }
         System.out.println("Se muestran vuelven a mostrar los medicos");
         a.mostrar();
+        a.eliminar(medic5);
+        a.mostrar();
     }
-    
 }
