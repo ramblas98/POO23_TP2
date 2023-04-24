@@ -4,7 +4,7 @@
 
 package com.mycompany.tp2_ej5;
 
-import java.util.Scanner;
+
 
 
 public class TP2_EJ5 {
