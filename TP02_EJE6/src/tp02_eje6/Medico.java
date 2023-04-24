@@ -97,4 +97,17 @@ public class Medico {
         System.out.println("Cupos: "+this.cupo);
         System.out.println("Cantidad De Pacientes: "+this.cantidadh);
     }
+    public void quitarhistoria(Historia a){
+        int i,j;
+        for(i=0;i<this.cantidadh;i++){
+            if(this.historial[i].getCodigoPaciente()==a.getCodigoPaciente()){
+               for(j=i;j<this.cantidadh;i++){
+                   this.historial[j]=this.historial[j+1]; 
+               }
+            }
+        }
+        this.cupo=this.cupo+1;
+        this.cantidadh=this.cantidadh-1;
+        
+    }
 }

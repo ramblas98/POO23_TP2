@@ -90,7 +90,10 @@ public class Historia {
     
     //metodo
     private void daralta(){
-        if(this.medicoasignado!=null) this.altapaciente=true;
+        if(this.medicoasignado!=null){ 
+            this.altapaciente=true;
+            this.medicoasignado.quitarhistoria(this);
+        }
     }
     public boolean asignarHistoriaaMedico(Cuartomedico b){
         Medico a=new Medico();
