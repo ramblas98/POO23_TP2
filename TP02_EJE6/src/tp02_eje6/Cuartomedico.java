@@ -66,9 +66,9 @@ public class Cuartomedico {
         int i,j;
         Historia a[]=new Historia[e.getCantidadh()];
         a=e.getHistorial();
-        for(i=0;i<e.getCantidadh();i++){
+        /*for(i=0;i<e.getCantidadh();i++){
             a[i].setMedicoasignado(null);
-        }
+        }*/
         for(i=0;i<this.cantidadmedicos;i++){
             if(this.listamedico[i].getNombre()==e.getNombre()){
                 for(j=i;j<this.cantidadmedicos;j++){

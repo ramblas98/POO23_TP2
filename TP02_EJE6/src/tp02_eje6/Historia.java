@@ -10,7 +10,7 @@ package tp02_eje6;
  * @author Sans
  */
 public class Historia {
-    private static int identificador;
+    private int identificador;
     private String codigoPaciente;
     private Estadoinicial estadoinicial;
     private Especialidad especialidadmedico;
@@ -31,8 +31,8 @@ public class Historia {
     
     //getter and setter
 
-    public static int getIdentificador() {
-        return identificador;
+    public int getIdentificador() {
+        return this.identificador;
     }
 
     public String getCodigoPaciente() {
@@ -57,8 +57,8 @@ public class Historia {
     
     
 
-    public static void setIdentificador(int identificador) {
-        Historia.identificador = identificador;
+    public void setIdentificador(int identificador) {
+        this.identificador = identificador;
     }
 
     public void setCodigoPaciente(String codigoPaciente) {
