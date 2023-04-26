@@ -4,6 +4,7 @@
  */
 package tp2_ej7;
 
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class Persona {
@@ -60,15 +61,11 @@ public class Persona {
         System.out.println("Apellido" + this.apellidos);
     }
     
-    public GregorianCalendar edad(GregorianCalendar fAct){
-        GregorianCalendar f;
-        f = new GregorianCalendar();
-        f.set(2023, 04, 24);
-        return f;
-    }
-    
-    public boolean cumpleanios(){
+    public int edad(GregorianCalendar fAct){
+        int edad = fAct.get(Calendar.YEAR) - fnac.get(Calendar.YEAR);
         
     }
+    
+    
     
 }
