@@ -68,7 +68,7 @@ public class Deposito {
             double intereses = (this.finalTNA / 365) * this.plazo;
             return intereses;
         }
-        else if (t.equals("TEA")){
+        if (t.equals("TEA")){
             double intereses = (Math.pow(1 + (this.finalTEA/360),this.plazo) - 1);
             return intereses;
         }
