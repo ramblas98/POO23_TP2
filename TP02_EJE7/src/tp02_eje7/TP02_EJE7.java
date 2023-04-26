@@ -16,7 +16,7 @@ public class TP02_EJE7 {
      */
     public static void main(String[] args) {
         Deposito d=new Deposito();
-        d.mostrarcambio(10378.00);
+        d.mostrarcambio(10378.76);
     }
     
 }

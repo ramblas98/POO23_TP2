@@ -75,16 +75,14 @@ public class Deposito {
     }
     
     //metodos
-/*    public double interes(String t){//consultar interes
-        double inte=((this.tna/100)*(this.plazo*30))/365;
+    public double interes(String t){//consultar interes
         if(t=="TNA"){
-            return (this.capital*inte);
+            return (this.capital*((this.tna/12))*this.plazo);
         }
         else{
-            
+            return (this.capital*(Math.pow(1+this.tea,this.plazo)))-this.capital;
         }
     }
-    */
     public double[] detalle(double i){
         double l[]=new double[8];
         int j;
