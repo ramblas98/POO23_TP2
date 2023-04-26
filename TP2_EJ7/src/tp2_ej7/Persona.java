@@ -62,10 +62,20 @@ public class Persona {
     }
     
     public int edad(GregorianCalendar fAct){
-        int edad = fAct.get(Calendar.YEAR) - fnac.get(Calendar.YEAR);
-        
+        int edad = fAct.get(Calendar.YEAR) - this.fnac.get(Calendar.YEAR);
+        if (fAct.get(Calendar.MONTH) < this.fnac.get(Calendar.MONTH)){
+            edad--;
+        }
+        else if (fAct.get(Calendar.MONTH) == this.fnac.get(Calendar.MONTH) &&
+                 fAct.get(Calendar.DAY_OF_MONTH) < this.fnac.get(Calendar.DAY_OF_MONTH)) {
+         edad--;
+      }
+      return edad;
     }
     
-    
+    public boolean cumpleanios(){
+    GregorianCalendar fechaActual = new GregorianCalendar();
+    return fechaActual.equals(this.fnac);
+    }
     
 }
