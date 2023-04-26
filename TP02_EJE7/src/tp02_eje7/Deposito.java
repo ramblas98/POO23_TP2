@@ -83,6 +83,14 @@ public class Deposito {
             return (this.capital*(Math.pow(1+this.tea,this.plazo)))-this.capital;
         }
     }
+    public double pagar(String t){
+        if(t=="TNA"){
+            return (this.capital+interes(t));
+        }
+        else{
+            return(this.capital+interes(t));
+        }
+    }
     public double[] detalle(double i){
         double l[]=new double[8];
         int j;
